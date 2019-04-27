@@ -16,7 +16,7 @@ public class GameState : MonoBehaviour {
     public class Buff {
         public int Regen;
         public int MaxHealth;
-        public int Strength;
+        public int Attack;
         public int Defense;
         public string GearSlot;
         public int Level;
@@ -33,8 +33,8 @@ public class GameState : MonoBehaviour {
                 text += $"\tMaxHP: {MaxHealth.ToString("+0;-#")}\n";
                 changed = true;
             }
-            if(Strength != 0) {
-                text += $"\tStr: {Strength.ToString("+0;-#")}\n";
+            if(Attack != 0) {
+                text += $"\tAtk: {Attack.ToString("+0;-#")}\n";
                 changed = true;
             }
             if(Defense != 0) {
@@ -59,8 +59,8 @@ public class GameState : MonoBehaviour {
     }
 
     public void UpdateHealth(Slider slider, ParticleSystem particles, int value) {
-        bool changed = false;
         var newHealth = Mathf.Clamp(Health + value, 0, GetMaxHealth());
+        var changed = false;
         if(newHealth != Health) {
             Health = newHealth;
             changed = true;

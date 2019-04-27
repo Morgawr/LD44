@@ -11,6 +11,7 @@ public class IdleSceneInitializer : MonoBehaviour {
     public GameObject RegenLabel;
     public GameObject Hat;
     public GameObject Cape;
+    public GameObject Sword;
 
     void Awake() {
         // Check what we have unlocked
@@ -25,6 +26,8 @@ public class IdleSceneInitializer : MonoBehaviour {
             Hat.SetActive(true);
         if(Upgrades.Contains("Cape")) 
             Cape.SetActive(true);
+        if(Upgrades.Contains("Sword"))
+            Sword.SetActive(true);
     }
 
 }

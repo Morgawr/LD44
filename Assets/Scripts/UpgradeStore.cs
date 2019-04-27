@@ -54,5 +54,15 @@ public class UpgradeStore : MonoBehaviour {
         buff.Level = 1;
         Singleton<GameState>.Instance.Buffs.Add(buff);
     }
+
+    public void GetSword() {
+        SceneInitializer.Sword.SetActive(true);
+        var buff = new GameState.Buff();
+        buff.Attack += 5;
+        buff.from = "Short Sword";
+        buff.GearSlot = "Sword";
+        buff.Level = 1;
+        Singleton<GameState>.Instance.Buffs.Add(buff);
+    }
 }
 }
