@@ -8,15 +8,9 @@ public class UpgradeStore : MonoBehaviour {
 
     public IdleSceneInitializer SceneInitializer;
     private GameObject player;
-    private Text realRegenLabel;
 
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
-        var labels = SceneInitializer.RegenLabel.GetComponentsInChildren<Text>();
-        foreach(var label in labels) {
-            if(label.transform.parent != SceneInitializer.RegenLabel)
-                realRegenLabel = label;
-        }
     }
 
     public void GetHealthBar() {
@@ -24,17 +18,16 @@ public class UpgradeStore : MonoBehaviour {
     }
 
     public void GetRegenLvl1() {
-        Singleton<GameState>.Instance.UpdateRegen(1, realRegenLabel);
+        Singleton<GameState>.Instance.UpdateRegen(1);
         SceneInitializer.RegenLabel.SetActive(true);
     }
 
     public void UpgradeRegen() {
-        Singleton<GameState>.Instance.UpdateRegen(5, realRegenLabel);
+        Singleton<GameState>.Instance.UpdateRegen(5);
     }
 
     public void UpgradeMaxHealthSmall() {
-        var currentMaxHealth = Singleton<GameState>.Instance.MaxHealth;
-        Singleton<GameState>.Instance.SetMaxHealth(currentMaxHealth + 10, SceneInitializer.HealthBar);
+        Singleton<GameState>.Instance.AddMaxHealth(10, SceneInitializer.HealthBar);
     }
 
     public void GetBackground() {
@@ -43,10 +36,23 @@ public class UpgradeStore : MonoBehaviour {
 
     public void GetHat() {
         SceneInitializer.Hat.SetActive(true);
+        var buff = new GameState.Buff();
+        buff.Regen += 5;
+        buff.from = "Normal Hat";
+        buff.GearSlot = "Hat";
+        buff.Level = 1;
+        Singleton<GameState>.Instance.Buffs.Add(buff);
     }
 
     public void GetCape() {
         SceneInitializer.Cape.SetActive(true);
+        var buff = new GameState.Buff();
+        buff.MaxHealth += 50;
+        buff.Defense += 2;
+        buff.from = "Normal Cape";
+        buff.GearSlot = "Body";
+        buff.Level = 1;
+        Singleton<GameState>.Instance.Buffs.Add(buff);
     }
 }
 }

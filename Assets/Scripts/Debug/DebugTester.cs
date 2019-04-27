@@ -7,14 +7,13 @@ using UnityEditor;
 namespace LD44 {
 public class DebugTester : MonoBehaviour {
 
-    public Text regenLabel;
     public ParticleSystem particles;
 
     public void PlusOneRegen() {
-        Singleton<GameState>.Instance.UpdateRegen(1, regenLabel);
+        Singleton<GameState>.Instance.UpdateRegen(1);
     }
     public void MinusOneRegen() {
-        Singleton<GameState>.Instance.UpdateRegen(-1, regenLabel);
+        Singleton<GameState>.Instance.UpdateRegen(-1);
     }
 
     public void Emit() {

@@ -9,11 +9,12 @@ public class HealthCounter : MonoBehaviour {
     float elapsed = 0f;
     public float TickRate = 1;
     public Slider HealthSlider;
+    public Text RegenLabel;
     private ParticleSystem particles;
 
     void Awake() {
         particles = GetComponent<ParticleSystem>();
-        Singleton<GameState>.Instance.SetMaxHealth(10, HealthSlider);
+        Singleton<GameState>.Instance.AddMaxHealth(10, HealthSlider);
         Singleton<GameState>.Instance.TickHealth(HealthSlider, null);
     }
 
@@ -41,6 +42,10 @@ public class HealthCounter : MonoBehaviour {
             return;
         }
         Singleton<GameState>.Instance.UpdateHealth(HealthSlider, particles, -cost);
+    }
+
+    void Update() {
+        RegenLabel.text = Singleton<GameState>.Instance.GetRegen() + " HP/s";
     }
 }
 }

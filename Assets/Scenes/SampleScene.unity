@@ -6240,6 +6240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TickRate: 1
   HealthSlider: {fileID: 1783347736}
+  RegenLabel: {fileID: 1222520297}
 --- !u!1 &884772550
 GameObject:
   m_ObjectHideFlags: 0
