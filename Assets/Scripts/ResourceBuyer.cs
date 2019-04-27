@@ -32,7 +32,7 @@ public class ResourceBuyer : MonoBehaviour {
 
     void Start() {
         buttonLabel = GetComponentInChildren<Text>();
-        buttonLabel.text = $"{ButtonName} ({PurchaseCost}HP)";
+        buttonLabel.text = $"{ButtonName} (-{PurchaseCost}HP)";
         UpgradeRequirements = new HashSet<string>(InitUpgradeRequirements);
     }
 

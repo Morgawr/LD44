@@ -76,5 +76,9 @@ public class UpgradeStore : MonoBehaviour {
     public void GetMap() {
         SceneInitializer.Map.SetActive(true);
     }
+
+    public void HideHealUp() {
+        SceneInitializer.HealUpButton.SetActive(false);
+    }
 }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEditor;
 
@@ -19,6 +20,11 @@ public class DebugTester : MonoBehaviour {
     public void Emit() {
         particles.Emit(1);
     }
+
+    public void ChangeSceneToIdle() {
+        SceneManager.UnloadSceneAsync("MapScene");
+        SceneManager.LoadSceneAsync("IdleScene", LoadSceneMode.Additive);
+    }
 }
 
 #if UNITY_EDITOR
@@ -36,6 +42,9 @@ public class CardEditorFunctionLayout : Editor
         }
         if(GUILayout.Button("Emit")){
             functions.Emit();
+        }
+        if(GUILayout.Button("Change Scene To Idle")){
+            functions.ChangeSceneToIdle();
         }
     }
 }

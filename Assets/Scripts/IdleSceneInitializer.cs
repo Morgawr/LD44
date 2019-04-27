@@ -13,6 +13,7 @@ public class IdleSceneInitializer : MonoBehaviour {
     public GameObject Cape;
     public GameObject Sword;
     public GameObject Map;
+    public GameObject HealUpButton;
 
     void Awake() {
         // Check what we have unlocked
@@ -31,6 +32,8 @@ public class IdleSceneInitializer : MonoBehaviour {
             Sword.SetActive(true);
         if(Upgrades.Contains("Map"))
             Map.SetActive(true);
+        if(Upgrades.Contains("Hide Heal Up"))
+            HealUpButton.SetActive(false);
     }
 
 }
