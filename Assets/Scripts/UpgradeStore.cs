@@ -22,12 +22,20 @@ public class UpgradeStore : MonoBehaviour {
         SceneInitializer.RegenLabel.SetActive(true);
     }
 
-    public void UpgradeRegen() {
+    public void UpgradeRegenSmall() {
         Singleton<GameState>.Instance.UpdateRegen(5);
+    }
+
+    public void UpgradeRegenMedium() {
+        Singleton<GameState>.Instance.UpdateRegen(15);
     }
 
     public void UpgradeMaxHealthSmall() {
         Singleton<GameState>.Instance.AddMaxHealth(10, SceneInitializer.HealthBar);
+    }
+
+    public void UpgradeMaxHealthMedium() {
+        Singleton<GameState>.Instance.AddMaxHealth(30, SceneInitializer.HealthBar);
     }
 
     public void GetBackground() {
@@ -63,6 +71,10 @@ public class UpgradeStore : MonoBehaviour {
         buff.GearSlot = "Sword";
         buff.Level = 1;
         Singleton<GameState>.Instance.Buffs.Add(buff);
+    }
+
+    public void GetMap() {
+        SceneInitializer.Map.SetActive(true);
     }
 }
 }
