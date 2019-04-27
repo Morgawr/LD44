@@ -8,12 +8,17 @@ namespace LD44 {
 public class DebugTester : MonoBehaviour {
 
     public Text regenLabel;
+    public ParticleSystem particles;
 
     public void PlusOneRegen() {
         Singleton<GameState>.Instance.UpdateRegen(1, regenLabel);
     }
     public void MinusOneRegen() {
         Singleton<GameState>.Instance.UpdateRegen(-1, regenLabel);
+    }
+
+    public void Emit() {
+        particles.Emit(1);
     }
 }
 
@@ -29,6 +34,9 @@ public class CardEditorFunctionLayout : Editor
         }
         if(GUILayout.Button("-1 Regen")){
             functions.MinusOneRegen();
+        }
+        if(GUILayout.Button("Emit")){
+            functions.Emit();
         }
     }
 }

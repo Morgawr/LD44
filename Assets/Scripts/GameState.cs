@@ -9,13 +9,21 @@ public class GameState : MonoBehaviour {
     public int Health;
     public int MaxHealth;
 
-    public void TickHealth(Slider slider) {
-        Health = Mathf.Clamp(Health + Regen, 0, MaxHealth);
+    public void TickHealth(Slider slider, ParticleSystem particles) {
+        bool changed = false;
+        var newHealth = Mathf.Clamp(Health + Regen, 0, MaxHealth);
+        if(newHealth != Health) {
+            Health = newHealth;
+            changed = true;
+        }
+
         if(slider == null) {
             Debug.LogWarning("Health Slider value is missing, cannot update UI.");
             return;
         }
         slider.value = Health;
+        if(particles && changed)
+            particles.Emit(Regen);
     }
 
     public void UpdateRegen(int value, Text label) {
