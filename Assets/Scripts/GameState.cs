@@ -22,5 +22,14 @@ public class GameState : MonoBehaviour {
         Regen += value;
         label.text = Regen + " HP/s";
     }
+
+    public void SetMaxHealth(int value, Slider slider) {
+        if(slider == null) {
+            Debug.LogWarning("Health Slider value is missing, cannot update MaxHealth UI.");
+            return;
+        }
+        MaxHealth = value;
+        slider.maxValue = MaxHealth;
+    }
 }
 }

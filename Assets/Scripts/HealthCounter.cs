@@ -11,10 +11,8 @@ public class HealthCounter : MonoBehaviour {
     public Slider HealthSlider;
 
     void Awake() {
-        if(HealthSlider) {
-            HealthSlider.maxValue = Singleton<GameState>.Instance.MaxHealth;
-            HealthSlider.value = Singleton<GameState>.Instance.Health;
-        }
+        Singleton<GameState>.Instance.SetMaxHealth(10, HealthSlider);
+        Singleton<GameState>.Instance.TickHealth(HealthSlider);
     }
 
     void FixedUpdate() {
