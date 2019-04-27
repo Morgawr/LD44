@@ -46,10 +46,13 @@ public class UpdateChecker : MonoBehaviour {
 
     public void Start() {
         Upgrades = new List<ResourceBuyer>(UpgradesPanel.GetComponentsInChildren<ResourceBuyer>());
+        foreach(var upgrade in Upgrades) {
+            upgrade.gameObject.SetActive(false);
+        }
         Check();
     }
 
-    public void LateUpdate() {
+    public void Update() {
         Check();
     }
 }
