@@ -29,5 +29,18 @@ public class HealthCounter : MonoBehaviour {
     public void ChangeHealth() {
         Singleton<GameState>.Instance.TickHealth(HealthSlider, particles);
     }
+
+    public void AddOneHealth() {
+        Singleton<GameState>.Instance.AddOneHealth(HealthSlider, particles);
+    }
+
+    public void SpendHealth(int cost) {
+        var health = Singleton<GameState>.Instance.Health;
+        if(health < cost) {
+            Debug.LogError($"Cost: {cost} is less than Health: {health}. This should never happen.");
+            return;
+        }
+        Singleton<GameState>.Instance.UpdateHealth(HealthSlider, particles, -cost);
+    }
 }
 }

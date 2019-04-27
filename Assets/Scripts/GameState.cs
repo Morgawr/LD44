@@ -9,21 +9,30 @@ public class GameState : MonoBehaviour {
     public int Health;
     public int MaxHealth;
 
+    public Dictionary<string, int> PurchasedUpgrades = new Dictionary<string, int>();
+
     public void TickHealth(Slider slider, ParticleSystem particles) {
+        UpdateHealth(slider, particles, Regen);
+    }
+
+    public void AddOneHealth(Slider slider, ParticleSystem particles) {
+        UpdateHealth(slider, particles, 1);
+    }
+
+    public void UpdateHealth(Slider slider, ParticleSystem particles, int value) {
         bool changed = false;
-        var newHealth = Mathf.Clamp(Health + Regen, 0, MaxHealth);
+        var newHealth = Mathf.Clamp(Health + value, 0, MaxHealth);
         if(newHealth != Health) {
             Health = newHealth;
             changed = true;
         }
-
         if(slider == null) {
             Debug.LogWarning("Health Slider value is missing, cannot update UI.");
             return;
         }
         slider.value = Health;
-        if(particles && changed)
-            particles.Emit(Regen);
+        if(particles && changed && value > 0)
+            particles.Emit(value);
     }
 
     public void UpdateRegen(int value, Text label) {
@@ -39,5 +48,6 @@ public class GameState : MonoBehaviour {
         MaxHealth = value;
         slider.maxValue = MaxHealth;
     }
+
 }
 }
