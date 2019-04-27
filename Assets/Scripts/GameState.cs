@@ -95,6 +95,14 @@ public class GameState : MonoBehaviour {
         return Regen + Buffs.Select(x => x.Regen).Sum();
     }
 
+    public int GetAttack() {
+        return Buffs.Select(x => x.Attack).Sum();
+    }
+
+    public int GetDefense() {
+        return Buffs.Select(x => x.Defense).Sum();
+    }
+
     public string GetBuffListAsText() {
         return string.Concat(Buffs.Select(x => x.GetText()));
     }
@@ -107,6 +115,13 @@ public class GameState : MonoBehaviour {
                 return;
             }
         } 
+    }
+
+    public bool ReceiveDamage(int damage) {
+        Health -= damage;
+        if(Health < 0)
+            Health = 0;
+        return Health == 0;
     }
 }
 }

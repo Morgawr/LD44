@@ -507,7 +507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Village 1
+  m_Text: 'Village
 
 '
 --- !u!222 &689493943
@@ -816,7 +816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 120.1, y: -29.655}
+  m_AnchoredPosition: {x: 120.1, y: -29.65503}
   m_SizeDelta: {x: 146.92503, y: -59.310005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1058590043
@@ -1171,8 +1171,9 @@ GameObject:
   - component: {fileID: 1398839859}
   - component: {fileID: 1398839858}
   - component: {fileID: 1398839857}
+  - component: {fileID: 1398839860}
   m_Layer: 5
-  m_Name: Village1
+  m_Name: Village
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1195,7 +1196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 276.2, y: 24.6}
+  m_AnchoredPosition: {x: 276.2, y: 24.599976}
   m_SizeDelta: {x: -714, y: -373.10004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398839857
@@ -1247,6 +1248,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398839855}
   m_CullTransparentMesh: 0
+--- !u!114 &1398839860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398839855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ba2ac28c50d3f46a656720545bd8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1448629943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -49.6, y: 37.7}
+  m_AnchoredPosition: {x: -49.600006, y: 37.69995}
   m_SizeDelta: {x: -714, y: -373.10004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1448629945
