@@ -14,7 +14,7 @@ public class HealthCounter : MonoBehaviour {
 
     void Awake() {
         particles = GetComponent<ParticleSystem>();
-        Singleton<GameState>.Instance.AddMaxHealth(10, HealthSlider);
+        Singleton<GameState>.Instance.AddMaxHealth(0, HealthSlider);
         Singleton<GameState>.Instance.TickHealth(HealthSlider, null);
     }
 

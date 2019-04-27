@@ -79,11 +79,11 @@ public class GameState : MonoBehaviour {
     }
 
     public void AddMaxHealth(int value, Slider slider) {
+        MaxHealth += value;
         if(slider == null) {
             Debug.LogWarning("Health Slider value is missing, cannot update MaxHealth UI.");
             return;
         }
-        MaxHealth += value;
         slider.maxValue = GetMaxHealth();
     }
 

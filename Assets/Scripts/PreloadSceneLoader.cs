@@ -7,7 +7,8 @@ namespace LD44 {
 public class PreloadSceneLoader : MonoBehaviour {
 
     void Start() {
-        var _ = Singleton<GameState>.Instance;
+        var gameState = Singleton<GameState>.Instance;
+        gameState.AddMaxHealth(10, null);
         SceneManager.LoadSceneAsync("IdleScene", LoadSceneMode.Additive);
     }
 
