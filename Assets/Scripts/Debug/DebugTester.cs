@@ -9,6 +9,7 @@ namespace LD44 {
 public class DebugTester : MonoBehaviour {
 
     public ParticleSystem particles;
+    public ChestOpener Chest;
 
     public void PlusOneRegen() {
         Singleton<GameState>.Instance.UpdateRegen(1);
@@ -24,6 +25,10 @@ public class DebugTester : MonoBehaviour {
     public void ChangeSceneToIdle() {
         SceneManager.UnloadSceneAsync("MapScene");
         SceneManager.LoadSceneAsync("IdleScene", LoadSceneMode.Additive);
+    }
+
+    public void OpenChest() {
+        Chest.OnOpen();
     }
 }
 
@@ -45,6 +50,9 @@ public class CardEditorFunctionLayout : Editor
         }
         if(GUILayout.Button("Change Scene To Idle")){
             functions.ChangeSceneToIdle();
+        }
+        if(GUILayout.Button("Open Chest")){
+            functions.OpenChest();
         }
     }
 }
