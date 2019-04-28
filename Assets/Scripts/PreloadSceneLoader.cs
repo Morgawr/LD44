@@ -45,7 +45,7 @@ public class PreloadSceneLoader : MonoBehaviour {
             {"+30 Max Hp", 8},
             {"+15 HP/s", 5},
         };
-        //SceneManager.LoadSceneAsync("BattleScene", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("BattleScene", LoadSceneMode.Additive);
         // END TEMPORARY
         SceneManager.LoadSceneAsync("IdleScene", LoadSceneMode.Additive);
     }

@@ -719,6 +719,7 @@ GameObject:
   - component: {fileID: 956362990}
   - component: {fileID: 956362989}
   - component: {fileID: 956362988}
+  - component: {fileID: 956362991}
   m_Layer: 5
   m_Name: Forest
   m_TagString: Untagged
@@ -795,6 +796,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956362986}
   m_CullTransparentMesh: 0
+--- !u!114 &956362991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956362986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433f304616e202044933dccfc23df944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToUnload: MapScene
+  ToLoad: ForestScene
 --- !u!1 &1058590041
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +1002,7 @@ GameObject:
   - component: {fileID: 1136510242}
   - component: {fileID: 1136510241}
   - component: {fileID: 1136510240}
+  - component: {fileID: 1136510243}
   m_Layer: 5
   m_Name: NecromancerHut
   m_TagString: Untagged
@@ -1063,6 +1079,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136510238}
   m_CullTransparentMesh: 0
+--- !u!114 &1136510243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136510238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433f304616e202044933dccfc23df944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToUnload: MapScene
+  ToLoad: NecromancerScene
 --- !u!1 &1189968901
 GameObject:
   m_ObjectHideFlags: 0

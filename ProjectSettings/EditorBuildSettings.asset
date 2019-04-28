@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BlacksmithScene.unity
     guid: 58f8418d6340d5e4095cf1855deb074d
+  - enabled: 1
+    path: Assets/Scenes/CaveScene.unity
+    guid: b165d97e9acd57349b552d66a252c991
+  - enabled: 1
+    path: Assets/Scenes/ForestScene.unity
+    guid: 09756d72990f2a94c8296e061d0c2367
+  - enabled: 1
+    path: Assets/Scenes/NecromancerScene.unity
+    guid: b82b267e781dc78419c3623e862d1704
   m_configObjects: {}
