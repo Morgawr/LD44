@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 namespace LD44 {
 public class CombatSceneFinisher : MonoBehaviour {
 
 
+    public Text DialogMessage;
     public string CurrentScene = "VillageScene";
+    public int DialogTransitionTime = 3;
     private string NextScene = "MapScene";
     private bool ShouldAdvanceToNextScene = false;
     private bool SceneAdvanced = false;
@@ -27,12 +30,12 @@ public class CombatSceneFinisher : MonoBehaviour {
 
     private IEnumerator RewardReaderLabel(List<GameState.Buff> Rewards) {
         foreach(var buff in Rewards) {
-            // Set Text 
-            // Display label
-            Debug.Log($"We got {buff.from}!");
+            DialogMessage.text = $"Obtained {buff.from}!\n\n";
+            DialogMessage.text += buff.GetText();
+            DialogMessage.transform.parent.gameObject.SetActive(true);
             Singleton<GameState>.Instance.AddBuff(buff);
-            yield return new WaitForSeconds(2);
-            // Hide label
+            yield return new WaitForSeconds(DialogTransitionTime);
+            DialogMessage.transform.parent.gameObject.SetActive(false);
         }
         ShouldAdvanceToNextScene = true;
     }

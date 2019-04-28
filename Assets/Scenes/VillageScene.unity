@@ -5716,7 +5716,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ddc3c41b42d0224ea837f9145b7863d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialogMessage: {fileID: 0}
   CurrentScene: VillageScene
+  DialogTransitionTime: 4
 --- !u!1001 &941323312
 PrefabInstance:
   m_ObjectHideFlags: 0

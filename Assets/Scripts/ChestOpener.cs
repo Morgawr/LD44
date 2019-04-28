@@ -10,6 +10,7 @@ public class ChestOpener : MonoBehaviour {
     public List<GameState.Buff> Rewards = new List<GameState.Buff>();
     public List<string> CompletedAreas = new List<string>();
 
+
     void Start() {
         Open.SetActive(false);
         Closed.SetActive(true);
