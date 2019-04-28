@@ -80,5 +80,13 @@ public class UpgradeStore : MonoBehaviour {
     public void HideHealUp() {
         SceneInitializer.HealUpButton.SetActive(false);
     }
+
+    public void GetSound() {
+        Singleton<GameState>.Instance.PlayIdleMusic();
+    }
+
+    public void GetSoundDisabler() {
+        GameObject.FindGameObjectWithTag("SoundButton").GetComponent<SoundToggler>().Toggle();
+    }
 }
 }

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - HealthBar
   - Enemy
+  - IdleAudioPlayer
+  - FXPlayer
+  - SoundButton
   layers:
   - Default
   - TransparentFX

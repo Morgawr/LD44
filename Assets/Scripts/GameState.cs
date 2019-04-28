@@ -128,5 +128,9 @@ public class GameState : MonoBehaviour {
             Health = 0;
         return Health == 0;
     }
+
+    public void PlayIdleMusic() {
+        GameObject.FindGameObjectWithTag("IdleAudioPlayer").GetComponent<AudioSource>().Play();
+    }
 }
 }

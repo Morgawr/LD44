@@ -12,6 +12,8 @@ public class DamageResolver : MonoBehaviour {
 
     private Slider HealthBar;
 
+    private SoundPlayer player;
+
     void OnCollisionEnter2D(Collision2D collision) {
         HandleDamageCollision(collision);
     }
@@ -24,8 +26,10 @@ public class DamageResolver : MonoBehaviour {
         if(!canAttack)
             return;
         if(IsPlayer && collision.collider.gameObject.tag == "Enemy") {
+            player.PlayHit();
             DoAttack(collision.collider.gameObject, Singleton<GameState>.Instance.GetAttack());
         } else if(collision.collider.gameObject.tag == "Player") {
+            player.PlayHit();
             DoAttack(collision.collider.gameObject, GetComponent<EnemyStats>().Attack);
         }
     }
@@ -64,6 +68,7 @@ public class DamageResolver : MonoBehaviour {
 
     void Start() {
         HealthBar = GetComponentInChildren<Slider>();
+        player = GameObject.FindGameObjectWithTag("FXPlayer").GetComponent<SoundPlayer>();
     }
     
     void Update() {

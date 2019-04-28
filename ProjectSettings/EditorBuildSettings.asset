@@ -9,12 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/PreloadScene.unity
     guid: ddcfdbe41866f4c478e8abeff10278ce
   - enabled: 1
-    path: Assets/Scenes/BattleScene.unity
-    guid: ee3a63ed5cacac743a9c8b42a5a1c521
-  - enabled: 1
     path: Assets/Scenes/IdleScene.unity
     guid: cbae38202c003b2458848c9118cfa114
   - enabled: 1
     path: Assets/Scenes/MapScene.unity
     guid: fe122e35cc5b27045a05c41ccaaa0bb9
+  - enabled: 1
+    path: Assets/Scenes/VillageScene.unity
+    guid: 5c94e14b4f5a2094fb9554ccf1f89bd7
+  - enabled: 1
+    path: Assets/Scenes/CastleScene.unity
+    guid: aa5e978874441514382a152758a1554b
+  - enabled: 1
+    path: Assets/Scenes/DragonCaveScene.unity
+    guid: d6a023a12f4b67144816c6f503491f1a
+  - enabled: 1
+    path: Assets/Scenes/CitadelScene.unity
+    guid: be95b1666ba3e6943bcbfa7e9dccccc3
   m_configObjects: {}

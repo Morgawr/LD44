@@ -16,12 +16,14 @@ public class CombatSceneFinisher : MonoBehaviour {
     private bool SceneAdvanced = false;
 
     public void PlayerDied() {
+        GameObject.FindGameObjectWithTag("FXPlayer").GetComponent<SoundPlayer>().PlayLoss();
         ShouldAdvanceToNextScene = true;
     }
 
     public void SceneFinished(List<GameState.Buff> Rewards, List<string> CompletedAreas) { 
         var tilter = GetComponentInChildren<SpriteTilter>();
         tilter.Disable();
+        GameObject.FindGameObjectWithTag("FXPlayer").GetComponent<SoundPlayer>().PlayVictory();
         foreach(var area in CompletedAreas) {
             Singleton<GameState>.Instance.CompletedAreas.Add(area);
         }
