@@ -34,6 +34,7 @@ public class IdleSceneInitializer : MonoBehaviour {
             Map.SetActive(true);
         if(Upgrades.Contains("Hide Heal Up"))
             HealUpButton.SetActive(false);
+
     }
 
 }

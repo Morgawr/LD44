@@ -5,13 +5,12 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 namespace LD44 {
-public class MapEventHandler : MonoBehaviour, IPointerClickHandler {
+public class ForgeClickHandler : MonoBehaviour, IPointerClickHandler  {
 
-    public string ToUnload;
     public void OnPointerClick(PointerEventData data) {
         if(data.button == PointerEventData.InputButton.Left) {
-            SceneManager.UnloadSceneAsync(ToUnload);
-            SceneManager.LoadSceneAsync("MapScene", LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync("MapScene");
+            SceneManager.LoadSceneAsync("BlacksmithScene", LoadSceneMode.Additive);
         }
     }
 }

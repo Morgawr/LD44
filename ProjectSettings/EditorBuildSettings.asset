@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CitadelScene.unity
     guid: be95b1666ba3e6943bcbfa7e9dccccc3
+  - enabled: 1
+    path: Assets/Scenes/BlacksmithScene.unity
+    guid: 58f8418d6340d5e4095cf1855deb074d
   m_configObjects: {}

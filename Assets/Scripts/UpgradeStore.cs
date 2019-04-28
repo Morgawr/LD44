@@ -88,5 +88,16 @@ public class UpgradeStore : MonoBehaviour {
     public void GetSoundDisabler() {
         GameObject.FindGameObjectWithTag("SoundButton").GetComponent<SoundToggler>().Toggle();
     }
+
+    public void GetHeavyArmor() {
+        SceneInitializer.Cape.SetActive(true);
+        var buff = new GameState.Buff();
+        buff.MaxHealth += 200;
+        buff.Defense += 30;
+        buff.from = "Heavy Armor";
+        buff.GearSlot = "Body";
+        buff.Level = 2;
+        Singleton<GameState>.Instance.AddBuff(buff);
+    }
 }
 }
