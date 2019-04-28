@@ -48,9 +48,7 @@ public class DamageResolver : MonoBehaviour {
             damage = Mathf.Clamp(damage - Singleton<GameState>.Instance.GetDefense(), 0, damage);
             Debug.Log($"Player received {damage} damage.");
             if(Singleton<GameState>.Instance.ReceiveDamage(damage)) {
-                //TODO: Perform death animation
-                SceneManager.UnloadSceneAsync("BattleScene");
-                SceneManager.LoadSceneAsync("MapScene", LoadSceneMode.Additive);
+                GetComponent<CombatSceneFinisher>().PlayerDied();
             }
         } else {
             body.AddForce(new Vector2(250, 100));

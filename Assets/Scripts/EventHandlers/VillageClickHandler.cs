@@ -9,7 +9,7 @@ public class VillageClickHandler : MonoBehaviour, IPointerClickHandler {
     public void OnPointerClick(PointerEventData data) {
         if(data.button == PointerEventData.InputButton.Left) {
             SceneManager.UnloadSceneAsync("MapScene");
-            SceneManager.LoadSceneAsync("BattleScene", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("VillageScene", LoadSceneMode.Additive);
         }
     }
 }

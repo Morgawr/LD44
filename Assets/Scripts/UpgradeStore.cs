@@ -49,28 +49,28 @@ public class UpgradeStore : MonoBehaviour {
         buff.from = "Normal Hat";
         buff.GearSlot = "Hat";
         buff.Level = 1;
-        Singleton<GameState>.Instance.Buffs.Add(buff);
+        Singleton<GameState>.Instance.AddBuff(buff);
     }
 
     public void GetCape() {
         SceneInitializer.Cape.SetActive(true);
         var buff = new GameState.Buff();
         buff.MaxHealth += 50;
-        buff.Defense += 2;
+        buff.Defense += 15;
         buff.from = "Normal Cape";
         buff.GearSlot = "Body";
         buff.Level = 1;
-        Singleton<GameState>.Instance.Buffs.Add(buff);
+        Singleton<GameState>.Instance.AddBuff(buff);
     }
 
     public void GetSword() {
         SceneInitializer.Sword.SetActive(true);
         var buff = new GameState.Buff();
-        buff.Attack += 5;
+        buff.Attack += 20;
         buff.from = "Short Sword";
         buff.GearSlot = "Sword";
         buff.Level = 1;
-        Singleton<GameState>.Instance.Buffs.Add(buff);
+        Singleton<GameState>.Instance.AddBuff(buff);
     }
 
     public void GetMap() {

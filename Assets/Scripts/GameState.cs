@@ -48,6 +48,7 @@ public class GameState : MonoBehaviour {
     }
 
     public Dictionary<string, int> PurchasedUpgrades = new Dictionary<string, int>();
+    public HashSet<string> CompletedAreas = new HashSet<string>();
     public List<Buff> Buffs = new List<Buff>();
 
     public void TickHealth(Slider slider, ParticleSystem particles) {
@@ -107,14 +108,18 @@ public class GameState : MonoBehaviour {
         return string.Concat(Buffs.Select(x => x.GetText()));
     }
 
-    public void ReplaceBuff(string slot, Buff newBuff) {
+    public void AddBuff(Buff newBuff) {
         for(var i = 0; i < Buffs.Count; i++) {
             var buff = Buffs[i];
-            if(buff.GearSlot == slot && buff.Level < newBuff.Level) {
+            if(buff.GearSlot == newBuff.GearSlot && buff.Level < newBuff.Level) {
                 Buffs[i] = newBuff;
                 return;
             }
-        } 
+            if(buff.GearSlot == newBuff.GearSlot) {
+                return;
+            }
+        }
+        Buffs.Add(newBuff);
     }
 
     public bool ReceiveDamage(int damage) {

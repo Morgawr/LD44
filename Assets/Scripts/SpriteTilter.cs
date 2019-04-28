@@ -17,8 +17,9 @@ public class SpriteTilter : MonoBehaviour {
         startTime = Time.time;
     }
 
-    void OnDisable() {
+    public void Disable() {
         SetZAngle(0);
+        this.enabled = false;
     }
 
     void FixedUpdate() {
