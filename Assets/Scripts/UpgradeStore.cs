@@ -90,13 +90,80 @@ public class UpgradeStore : MonoBehaviour {
     }
 
     public void GetHeavyArmor() {
-        SceneInitializer.Cape.SetActive(true);
         var buff = new GameState.Buff();
         buff.MaxHealth += 200;
         buff.Defense += 30;
         buff.from = "Heavy Armor";
         buff.GearSlot = "Body";
         buff.Level = 2;
+        Singleton<GameState>.Instance.AddBuff(buff);
+    }
+
+    public void GetBattleAxe() {
+        var buff = new GameState.Buff();
+        buff.Attack += 70;
+        buff.from = "Battle Axe";
+        buff.GearSlot = "Sword";
+        buff.Level = 3;
+        Singleton<GameState>.Instance.AddBuff(buff);
+    }
+
+    public void GetNecromancyBracelet() {
+        var buff = new GameState.Buff();
+        buff.Regen += 100;
+        buff.Defense += 50;
+        buff.from = "Bracelet of Necromancy";
+        buff.GearSlot = "Necromancy Bracelet";
+        buff.Level = 1;
+        Singleton<GameState>.Instance.AddBuff(buff);
+    }
+
+    public void GetArmorOfFire() {
+        var buff = new GameState.Buff();
+        buff.Defense += 140;
+        buff.MaxHealth += 500;
+        buff.from = "Armor of Fire";
+        buff.GearSlot = "Body";
+        buff.Level = 5;
+        Singleton<GameState>.Instance.AddBuff(buff);
+    }
+
+    public void GetCurseOfProtection() {
+        var buff = new GameState.Buff();
+        buff.MaxHealth += 1700;
+        buff.Regen += 50;
+        buff.from = "Curse of Protection";
+        buff.GearSlot = "Curse";
+        buff.Level = 1;
+        Singleton<GameState>.Instance.AddBuff(buff);
+    }
+
+    public void GetBiteOfTheSnake() {
+        var buff = new GameState.Buff();
+        buff.MaxHealth += 2000;
+        buff.Regen -= 200;
+        buff.from = "Snake Venom";
+        buff.GearSlot = "Venom";
+        buff.Level = 1;
+        Singleton<GameState>.Instance.AddBuff(buff);
+    }
+
+    public void GetClaymore() {
+        var buff = new GameState.Buff();
+        buff.Attack = 200;
+        buff.from = "Claymore";
+        buff.GearSlot = "Sword";
+        buff.Level = 6;
+        Singleton<GameState>.Instance.AddBuff(buff);
+    }
+
+    public void GetArmorOfGods() {
+        var buff = new GameState.Buff();
+        buff.MaxHealth = 500;
+        buff.Defense = 220;
+        buff.from = "Armor of Gods";
+        buff.GearSlot = "Body";
+        buff.Level = 10;
         Singleton<GameState>.Instance.AddBuff(buff);
     }
 }
