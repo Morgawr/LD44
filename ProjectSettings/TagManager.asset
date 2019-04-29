@@ -9,6 +9,7 @@ TagManager:
   - IdleAudioPlayer
   - FXPlayer
   - SoundButton
+  - QuitButton
   layers:
   - Default
   - TransparentFX

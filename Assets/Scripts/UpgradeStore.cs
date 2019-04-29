@@ -85,6 +85,10 @@ public class UpgradeStore : MonoBehaviour {
         Singleton<GameState>.Instance.PlayIdleMusic();
     }
 
+    public void GetQuitButton() {
+        GameObject.FindGameObjectWithTag("QuitButton").GetComponent<QuitEnabler>().EnableChild();
+    }
+
     public void GetSoundDisabler() {
         GameObject.FindGameObjectWithTag("SoundButton").GetComponent<SoundToggler>().Toggle();
     }

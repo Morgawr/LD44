@@ -132,5 +132,6 @@ public class GameState : MonoBehaviour {
     public void PlayIdleMusic() {
         GameObject.FindGameObjectWithTag("IdleAudioPlayer").GetComponent<AudioSource>().Play();
     }
+
 }
 }
